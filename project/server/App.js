@@ -10,6 +10,7 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
+const compression = require('compression')
 
 const getMiddlewares = require('./middlewares')
 const getModels = require('./models');
@@ -84,6 +85,7 @@ class App {
     this.controllers = this.getControllers();
     this.log.trace('controllers', Object.keys(this.controllers));
     
+    this.app.use(compression())
     this.useMiddlewares();
     this.useRoutes();
 
