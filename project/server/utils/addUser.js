@@ -2,17 +2,19 @@
 const mongoose = require('mongoose');
 const readline = require('readline');
 const rl = readline.createInterface({input: process.stdin, output: process.stdout});
-const config = require('./config');
-mongoose.Promise = global.Promise;
-// mongoose.connect('mongodb://root:12345@ds137191.mlab.com:37191/testing');
-mongoose
-mongoose.connect(`mongodb://${config.db.host}:${config.db.port}/${config.db.name}`, {useNewUrlParser: true})
-  .catch(e => {
-    console.error(e);
-    throw e;
-  });
+let config = require('../config/index.example');
 
-require('./models/DbClose');
+if (process.env.NODE_ENV === 'production') {
+  config = require('../config/index');
+}
+
+if(process.env.NODE_ENV === 'production') {
+  mongoose.connect(`mongodb+srv://${config.db.user}:${config.db.password}@${config.db.host}/${config.db.name}?retryWrites=true&w=majority`, {useNewUrlParser: true});
+} else {
+  mongoose.connect(`mongodb://${config.db.host}:${config.db.port}/${config.db.name}`, {useNewUrlParser: true});
+}
+
+// require('./models/DbClose');
 //email и пароль, изначально пустые
 let email = '',
   password = '';
@@ -34,7 +36,7 @@ rl.question('email: ', answer => {
 
 //когда ввод будет завершен
 rl.on('close', () => {
-  const User = require('./models/User');
+  const User = require('../models/User')({log:{}});
     adminUser = new User({ id: new mongoose.mongo.ObjectId(), email: email, password: password});
 
   //пытаемся найти пользователя с таким emailом
