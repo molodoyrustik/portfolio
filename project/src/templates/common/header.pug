@@ -1,0 +1,31 @@
+section.section.hero
+  .hero__top
+    .socials
+      ul.socials__list.hero__socials
+        - var vk = {name: 'vkontakte', width: '31', height: '17', href:'https://vk.com/molodoyrustik'};
+        - var github = {name: 'github', width: '26', height: '22', href:'https://github.com/molodoyrustik'};
+        - var inst = {name: 'instagram', width: '24', height: '22', href:'https://www.instagram.com/molodoy.rustik/'};
+        each item in [vk, github, inst]
+          li.socials__item
+            a(href=`${item.href}` target='_blank' class=` socials__link socials__link--${item.name}`)
+              span.socials__text= item.name
+              svg.icon.hero__socials-icon(width=`${item.width}` height=`${item.height}`)
+                use(xlink:href=`#${item.name}`)
+    button#humburger.menu-button
+      .menu-button__line
+
+  .scroll-parallax
+    .scroll-parallax__layer
+    .scroll-parallax__layer
+    .scroll-parallax__layer
+    .scroll-parallax__layer
+    .scroll-parallax__layer
+    .scroll-parallax__layer
+    .scroll-parallax__layer
+    .scroll-parallax__layer
+    .scroll-parallax__layer
+    .scroll-parallax__layer
+
+
+  block header
+      

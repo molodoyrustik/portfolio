@@ -1,0 +1,21 @@
+include ../mixins/mixins.pug
+
+doctype html
+html(lang="ru-RU")
+	include ../common/head.pug
+body
+	.main-layout
+		<!-- / ========= preloader ========= \ -->
+		include ../common/preloader.pug
+		<!-- / ========= header ========= \ -->
+		include  ../common/header.pug
+		<!-- / ========= content ========= \ -->
+		block content
+		<!-- / ========= modal ========= \ -->
+		include ../common/overlay.pug
+		<!-- / ========= popup ========= \ -->
+		include ../common/popup.pug
+		<!-- / ========= footer ========= \ -->
+		include ../common/footer.pug
+		<!-- / ========= svg ========= \ -->
+		include ../common/svg.pug

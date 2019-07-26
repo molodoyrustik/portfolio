@@ -1,0 +1,66 @@
+.title {
+  position: relative;
+  display: inline-block;
+  padding-top: 14px;
+  padding-right: 48px;
+  padding-bottom: 14px;
+  padding-left: 48px;
+  font-size: 35px;
+  line-height: 42px;
+  @include bernier();
+  color: #373e42;
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  &:after, &:before {
+    content: '';
+    display: block;
+    width: 22px;
+    height: 5px;
+    @include centered('y');
+    background: rgba(#373e42, .2);
+  }
+
+  &:after {
+    right: 5px;
+  }
+
+  &:before {
+    left: 5px;
+  }
+
+  @include tablet {
+    padding-top: 18px;
+    padding-right: 52px;
+    padding-bottom: 18px;
+    padding-left: 52px;
+    font-size: 49px;
+    line-height: 52px;
+
+    &:after {
+      right: 6px;
+    }
+
+    &:before {
+      left: 5px;
+    }
+  }
+
+  @include desktop {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    padding-left: 80px;
+    padding-right: 80px;
+    font-size: 63px;
+    line-height: 46px;
+    
+    &:after {
+      right: 40px;
+    }
+
+    &:before {
+      left: 40px;
+    }
+  }
+}

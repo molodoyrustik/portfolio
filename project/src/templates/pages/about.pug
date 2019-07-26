@@ -1,0 +1,87 @@
+extends ../layouts/main-layout.pug
+
+block title
+  title= title
+
+block header
+  button(href="#" data-link='.about').go.go__down.fa.fa-chevron-down.hero__down-arrow
+  .hero__block
+    svg.icon.hero__portfolio-bg(width="1175.495" height="313.961")
+      use(xlink:href="#portfolio-header")
+    .user.hero__user
+      .user__photo.hero__photo
+        .user__photo-avatar
+          picture
+            img(src="/images/content/avatar.jpg" srcset='/images/content/avatar@2x.jpg 2x', alt="").user__photo-img
+      .user__name.hero__user-name Руслан Багаутдинов
+      .user__description.hero__user-desc Личный сайт веб разработчика
+  .hero__triangle-wrap
+    .triangle
+      svg.triangle__element.triangle__element--fill-white(viewbox='0 0 1000 100', preserveaspectratio='none')
+        polygon(points='0,0 0,100 1000,100')
+      svg.triangle__element.triangle__element--fill-beige(viewbox='0 0 1000 100', preserveaspectratio='none')
+        polygon(points='0,100 1000,100 1000,0')
+
+block content
+  main.about-page
+    section.section.about
+      .about__left
+        .about__title-wrap
+          +title('Обо мне', 'about-header.png', 'about__section-title')
+        .user-about
+          .user-about__photo
+            picture
+              img(src="images/content/avatar.jpg" srcset='/images/content/avatar@2x.jpg 2x' alt="").user-about__img
+          .subtitle.user-about__title Кто я
+          .user-about__text
+            p Я веб разработчик из Уфы. Мне 19 лет. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.Я веб разработчик из Уфы. Мне 19 лет. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+            p Я веб разработчик из Уфы. Мне 19 лет. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты. Я веб разработчик из Уфы. Мне 19 лет. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+            
+      .about__right
+        .about-data
+          .about-data__description
+            .subtitle.about-data__subtitle Чем я могу быть вам полезен
+            .about-data__text.wow(data-animate='toFadeInUp')
+              p Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.
+          .about-data__content
+            ul.skills
+              each skillGroup in skillGroups
+                  li.skills__item.wow(data-animate='toFadeInUp')
+                    .skill-section
+                      .skill-section__title= skillGroup.title
+                      ul.skill-section__list
+                        each skill in skills
+                          if skill.groupId === skillGroup.id
+                            li.skills-section__item
+                              .skill
+                                svg.skill__circle(viewbox='0 0 110 110')
+                                  circle.circle__first(r='45', cx='50%', cy='50%', fill='none')
+                                  circle.circle__second.circle-100.wow(r='45', cx='50%', cy='50%', transform='rotate(-90 55 55)' data-value=`${skill.value}` data-animate='toCircle')
+                                span.skill__name= skill.name
+
+            
+    section.section.map
+      .map__root#map
+      .contacts.map__contacts
+        .subtitle.map__subtitle Контакты
+        ul.contacts__list
+          li.contacts__item
+            a(href="skype:skype_kdn").contacts__link.contacts__link--skype
+              svg.icon.contacts__icon(width='24' height='24')
+                use(xlink:href="#skype")
+              span skype_kdn
+          li.contacts__item
+            a(href="mailto:molodoyrustikjob@gmail.com").contacts__link.contacts__link--envelope
+              svg.icon.contacts__icon(width='22' height='17')
+                use(xlink:href="#envelope")
+              span molodoyrustikjob@gmail.com
+          li.contacts__item
+            a(href="tel:+79279650475").contacts__link.contacts__link--phone
+              svg.icon.contacts__icon(width='19' height='19')
+                use(xlink:href="#phone")
+              span +7 927 965 04 75
+          li.contacts__item
+            a(href="#").contacts__link.contacts__link--map-marker
+              svg.icon.contacts__icon(width='15' height='22')
+                use(xlink:href="#map_marker")
+              span г.Уфа, ул. Свердлова, д.1

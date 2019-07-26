@@ -1,0 +1,16 @@
+.tabs-content {
+
+}
+
+.tabs-content__list {
+  position: relative;
+  z-index: 2;
+}
+
+.tabs-content__item {
+  display: none;
+}
+
+.tabs-content__item--active {
+  display: block;
+}

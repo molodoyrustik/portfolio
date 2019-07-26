@@ -1,0 +1,22 @@
+.admin-button {
+  display: block;
+  padding-top: 1px;
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-bottom: 1px;
+  @include roboto('medium');
+  font-size: 14px;
+  line-height: 36px;
+  color: #ffffff;
+  background-color: #00bfa5;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  cursor: pointer;
+
+  @include tablet {
+    padding-top: 4.5px;
+    padding-bottom: 4.5px;
+    font-size: 16px;
+  }
+}

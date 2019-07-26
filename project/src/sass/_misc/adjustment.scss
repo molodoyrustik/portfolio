@@ -1,0 +1,81 @@
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+// mobile first
+body {
+  min-width: 320px;
+  font-size: 15px;
+  line-height: 24px;
+  font-family:  "Roboto",Arial,sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+// mobile first
+.container{
+  width: 260px; // либо auto если макет резиновый
+  margin: 0 auto;
+  padding: 0 30px; // не забываем про отступы контента от краев
+
+  @include tablet { // от 768px планшетная версия
+    width: 668px; // либо auto если макет резиновый
+    padding: 0 50px; // не забываем про отступы контента от краев
+  }
+  @include desktop { // от 1200px планшетная версия
+    width: 1050px; // на desktop контент обычно фиксированной ширины
+    padding: 0 100px;
+  }
+}
+
+.hide {
+  opacity: 0;
+}
+
+.show {
+  opacity: 1;
+}
+
+p, h1 {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.visually-hidden:not(:focus):not(:active) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: react(0 0 0 0);
+  overflow: hidden;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+.clearfix:after {
+    clear: both;
+}
+.clearfix {
+    *zoom: 1;
+}
+
+
+// html {
+//   box-sizing: border-box;
+// }
+// *, *:before, *:after {
+//   box-sizing: inherit;
+// }

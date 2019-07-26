@@ -1,0 +1,35 @@
+head
+	meta(charset='UTF-8')
+	meta(http-equiv='X-UA-Compatible', content='IE=edge')
+	meta(name='viewport', content='width=device-width, initial-scale=1')
+	meta(content="ie=edge" http-equiv="x-ua-compatible")
+
+	block title
+		title exmaple
+
+	// SEO
+	meta(name='description', content='')
+	meta(name='author', content='')
+	meta(name='keywords', content='')
+
+	// FAVICON
+	// preload fonts
+	link(rel='preload', href='/fonts/BERNIERDistressed-Regular.woff2', as='font', type='font/woff2' crossorigin='')
+	link(rel='preload', href='/fonts/BERNIERRegular-Regular.woff2', as='font', type='font/woff2' crossorigin='')
+	link(rel='preload', href='/fonts/BERNIERShade-Regular.woff2', as='font', type='font/woff2' crossorigin='')
+	link(rel='preload', href='/fonts/Roboto-Bold.woff2', as='font', type='font/woff2' crossorigin='')
+	link(rel='preload', href='/fonts/Roboto-Medium.woff2', as='font', type='font/woff2' crossorigin='')
+	link(rel='preload', href='/fonts/Roboto-Regular.woff2', as='font', type='font/woff2' crossorigin='')
+	
+	// styles
+	link(rel="stylesheet" href=`/css/foundation${suffix}.css${version}`)
+	link(rel="stylesheet" href=`/css/main${suffix}.css${version}`)
+	
+	script(src=`/js/admin${suffix}.js${version}` defer)
+
+	<!--[if lt IE 9]>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+	
+

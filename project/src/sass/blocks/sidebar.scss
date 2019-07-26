@@ -1,0 +1,118 @@
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -285px / 320px * 100%;
+  bottom: 0;
+  z-index: 110;
+  width: 285px / 320px * 100%;
+  height: 100%;
+  margin: 0;
+  padding-top: 40px;
+  padding-right: 20px / 320px * 100%;
+  padding-left: 20px / 320px * 100%;
+  background-color: #00bfa5;
+  transition: left .3s;
+  box-sizing: border-box;
+  box-shadow: 3px 0px 3px 0px rgba(0, 0, 0, 0.2);
+
+  @include desktop {
+    position: relative;
+    height: 1px;
+    left: auto;
+    top: auto;
+    bottom: auto;
+    width: 270px ;
+    padding: 0;
+    margin: 0;
+    background-color: #ffffff;
+    box-shadow: none;
+    transition: none;
+  }
+}
+
+.sidebar--active {
+  left: 0;
+}
+
+.sidebar__toggle {
+  display: block;
+  z-index: 1;
+  position: absolute;
+  @include centered('y');
+  right: -10px;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background-color: #00bfa5;
+  // box-shadow: 3px 0px 3px 0px rgba(0, 0, 0, 0.2); 
+  cursor: pointer;
+
+  @include tablet {
+    height: 60px;
+    width: 60px;
+    right: -20px;
+  }
+
+  @include desktop {
+    display: none;
+  }
+}
+
+.sidebar__list {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  text-align: right;
+
+  @include desktop {
+    position: absolute;
+  }
+}
+
+.sidebar__item {
+  @include desktop {
+    margin-bottom: 15px;
+  }
+}
+
+.sidebar__link {
+  display: block;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 16px;
+  line-height: 26px;
+  @include roboto(bold);
+  color: rgba(#ffffff, 0.7);
+  transition: all .5s;
+  text-decoration: none;
+
+  &:hover {
+    color: #ffffff;
+  }
+
+  @include desktop {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-right: 17px;
+    @include roboto('bold');
+    color: #455a64;
+    border-right: 3px solid transparent;
+
+    &:hover {
+      @include roboto('bold');
+      color: #00bfa5;
+      border-right: 3px solid #00bfa5;
+    }
+  }
+}
+
+.sidebar__link--active {
+  color: #ffffff;
+  
+  @include desktop {
+    @include roboto('bold');
+    color: #00bfa5;
+    border-right: 3px solid #00bfa5;
+  }
+}

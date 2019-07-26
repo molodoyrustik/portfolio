@@ -1,0 +1,37 @@
+.admin-blog {
+
+}
+
+.admin-blog__title {
+  margin-bottom: 10px;
+
+  @include tablet {
+    margin-bottom: 30px;
+  }
+}
+
+.admin-blog__subtitle {
+  margin-bottom: 9px;
+  @include roboto('medium');
+  font-size: 16px;
+  line-height: 34px;
+  color: #455a64;
+}
+
+.admin-blog__textarea {
+  display: block;
+  height: 250px;
+  margin-bottom: 30px;
+  box-sizing: border-box;
+  resize: none;
+
+  @include tablet {
+    width: 500px;
+    height: 300px;
+    margin-bottom: 35px;
+  }
+
+  @include desktop {
+    height: 170px;
+  }
+}

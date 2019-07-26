@@ -1,0 +1,91 @@
+extends ../layouts/login-layout.pug
+
+block title
+  title= title
+
+block content
+    .welcome
+      .mouse-parallax
+        .mouse-parallax__layer
+        .mouse-parallax__layer
+        .mouse-parallax__layer
+        .mouse-parallax__layer
+        .mouse-parallax__layer
+        .mouse-parallax__layer
+        .mouse-parallax__layer
+        .mouse-parallax__layer
+        .mouse-parallax__layer
+        .mouse-parallax__layer
+        
+      a(href="/" id='auth-button').button.welcome__auth-btn Авторизоваться
+      .flip-card
+        .flip-card__inner
+          .flip-card__front
+            .welcome__block
+              .welcome__info
+                .user
+                  .user__photo
+                    picture
+                      img(src="/images/content/avatar.jpg" srcset='/images/content/avatar@2x.jpg 2x', alt="").user__photo-img
+                  .user__name Руслан Багаутдинов
+                  .user__description Личный сайт веб разработчика
+                .socials.welcome__socials
+                  ul.socials__list
+                    - var vk = {name: 'vkontakte', width: '31', height: '17', href:'https://vk.com/molodoyrustik'};
+                    - var github = {name: 'github', width: '26', height: '22', href:'https://github.com/molodoyrustik'};
+                    - var inst = {name: 'instagram', width: '24', height: '22', href:'https://www.instagram.com/molodoy.rustik/'};
+                    each item in [vk, github, inst]
+                      li.socials__item
+                        a(href=`${item.href}` target='_blank' class=` socials__link socials__link--${item.name}`)
+                          span.socials__text= item.name
+                          svg.icon.welcome__socials-icon(width=`${item.width}` height=`${item.height}`)
+                            use(xlink:href=`#${item.name}`)
+              nav.menu
+                ul.menu__list
+                  li.menu__item
+                    a(href="works").menu__link Мои работы
+                  li.menu__item
+                    a(href="about").menu__link Обо мне
+                  li.menu__item
+                    a(href="blog").menu__link Блог
+
+          .flip-card__back      
+            form.login#signin-form
+              .login__form
+                .subtitle.login__title Авторизуйтесь
+                .login__elements
+                  label.login__label
+                    input(type='text' placeholder='Логин' data-validation='mail' data-id='0' name='email').login__input
+                    span.login__icon-wrap
+                      svg.icon(width='14.137px' height='15.422px').login__icon
+                        use(xlink:href=`#login`)  
+                  label.login__label
+                    input(type='password' placeholder='Пароль' data-validation='text' data-id='1' name='password').login__input
+                    span.login__icon-wrap
+                      svg.icon(width='16.897px' height='15.984px').login__icon
+                        use(xlink:href=`#password`)
+                  label.checkbox-group.login__checkbox-label
+                    input.checkbox-group__input(type='checkbox', name='human' data-validation='human')
+                    span.checkbox-group__indicator
+                      svg.icon(width='11' height='9').checkbox-group__icon
+                        use(xlink:href=`#check`)
+                    span.checkbox-group__text.login__checkbox-text Я человек
+                  .login__robot-wrapper
+                    .login__robot-text Вы точно не робот?
+                    .login__radio-wrap
+                      label.radio-group.login__radio-label
+                        input(type='radio' name='radio' data-validation='robot' value='1').radio-group__input
+                        span.radio-group__indicator
+                        span.radio-group__text  Да
+                      label.radio-group.login__radio-label
+                        input(type='radio' name='radio' data-validation='robot' value='0').radio-group__input
+                        span.radio-group__indicator
+                        span.radio-group__text  Не уверен
+              nav.menu
+                ul.menu__list
+                  li.menu__item
+                    a(href="#" id='go-to-main').menu__link На главную
+                  li.menu__item
+                    button(type='submit').menu__link Войти
+        
+      p.welcome__footer-text © Руслан Багаутдинов | I boldly go where my dream is | 2016

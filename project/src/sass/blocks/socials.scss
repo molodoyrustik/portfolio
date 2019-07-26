@@ -1,0 +1,45 @@
+.socials {
+  margin: 0;
+  padding: 0;
+}
+
+.socials__list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.socials__item {
+  margin-left: 30px;
+  &:first-child {
+    margin-left: 0;
+  }
+}
+
+.socials__link {
+  display: block;
+}
+
+.socials__link--vkontakte {
+  width: 31px;
+  height: 17px;
+}
+
+.socials__link--github {
+  width: 26px;
+  height: 22px;
+}
+
+.socials__link--instagram {
+  width: 24px;
+  height: 22px;
+}
+
+.socials__text {
+  display: none;
+}
+
+.socials__icon {
+  display: block;
+}

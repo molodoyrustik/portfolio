@@ -1,0 +1,13 @@
+include ../mixins/mixins
+
+doctype html
+html(lang="ru-RU").html-welcome
+	include ../common/head-admin.pug
+body
+	<!-- / ========= preloader ========= \ -->
+	//- include ../common/preloader.pug
+	block content
+	<!-- / ========= popup ========= \ -->
+	include ../common/popup.pug
+	<!-- / ========= svg ========= \ -->
+	include ../common/svg.pug

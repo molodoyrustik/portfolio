@@ -1,0 +1,134 @@
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 568px;
+  height: 100vh;
+  background-image: url('/images/bg/welcome-bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  @include tablet {
+    min-height: 505px;
+  }
+
+  @include desktop {
+    background-image: none;
+    min-height: 600px;
+  }
+}
+
+.hero__top {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  box-sizing: border-box;
+  z-index: 2;
+
+  @include tablet {
+    padding-top: 30px;
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+  @include desktop {
+    padding-top: 30px;
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+  z-index: 17;
+}
+
+.hero__socials {
+
+}
+
+.hero__socials-icon {
+  display: block;
+  fill: rgba(#ffffff, 0.5);
+
+  &:hover {
+    fill: #ffffff;
+  }
+}
+
+.hero__bg {
+  position: absolute;
+	top: 0;
+	left: 0;
+  right: 0;
+  height: 100vh;
+  background-image: url('/images/bg/portfolio.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.hero__down-arrow {
+  display: block;
+  z-index: 100;
+  @include centered('x');
+  bottom: 50px;
+
+  @include desktop {
+    bottom: 72px;
+  }
+}
+
+.hero__block {
+  position: relative;
+  width: 250px;
+  @include centered('both');
+  @include tablet {
+    width: 370px;
+  }
+}
+
+.hero__portfolio-bg {
+  display: none;
+  @include centered('both');
+  fill: rgba(#ffffff, 0.06);
+  z-index: -1;
+  @include desktop {
+    display: block;
+  }
+}
+
+.hero__user {
+  
+}
+
+.hero__photo {
+  @include tablet {
+    margin-bottom: 20px;
+  }
+  @include desktop {
+    margin-bottom: 25px;
+  }
+}
+
+.hero__user-name {
+  color: #ffffff;
+  margin-bottom: 3.5px;
+  @include tablet {
+    margin-bottom: 0;
+    font-size: 35px;
+    line-height: 45px;
+  } 
+}
+
+.hero__user-desc {
+  margin-bottom: 0;
+  @include roboto('light');
+  color: rgba(#ffffff, 0.8);
+}
+
+.hero__triangle-wrap {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}

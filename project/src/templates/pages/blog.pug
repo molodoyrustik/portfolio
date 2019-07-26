@@ -1,0 +1,48 @@
+extends ../layouts/main-layout.pug
+
+block title
+  title= title
+
+block header
+  button(href="#" data-link='.blog-page').go.go__down.fa.fa-chevron-down.hero__down-arrow
+  .hero__block
+    svg.icon.hero__portfolio-bg(width="302" height="208")
+      use(xlink:href="#blog-header")
+    .user.hero__user.blog-user
+      .user__photo.hero__photo
+        .user__photo-avatar
+          picture
+            img(src="/images/content/avatar.jpg" srcset='/images/content/avatar@2x.jpg 2x', alt="").user__photo-img
+      +title('Блог', 'blog-header.svg', 'blog-user__title')
+      .user__description.blog-user__description Статьи, которые я написал
+  .hero__triangle-wrap
+    .triangle
+      svg.triangle__element.triangle__element--fill-blog(viewbox='0 0 1000 100', preserveaspectratio='none')
+        polygon(points='0,0 0,100 1000,100')
+      svg.triangle__element.triangle__element--fill-blog(viewbox='0 0 1000 100', preserveaspectratio='none')
+        polygon(points='0,100 1000,100 1000,0')
+  
+block content
+  main.blog-page
+    .blog-page__fixed
+      .blog-page__container
+        .blog-page__left
+        .blog-page__right
+
+    .blog-page__container.blog-page__static
+      .blog-page__left
+        aside.sidebar
+          div.sidebar__toggle
+          ul.sidebar__list
+            each post, index in posts
+              li.sidebar__item
+                a.sidebar__link(href="#" data-link=`${index}`)= post.title
+      .blog-page__right
+        section.posts
+          ul.posts__list
+            each post, index in posts
+              li.posts__item.wow-blog(data-animate='toFadeIn' data-id=`${index}`)
+                .post
+                  .post__title= post.title
+                  .post__date= post.date
+                  .post__text= post.text

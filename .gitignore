@@ -1,0 +1,11 @@
+# Node.JS
+**/node_modules
+**/npm-debug.log
+**/package-lock.json
+**/sign.json
+**/yarn.lock
+**/version.json
+**/build
+**/public
+**/config/index.js
+/runtime

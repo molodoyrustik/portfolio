@@ -1,0 +1,82 @@
+extends ../layouts/admin-layout.pug
+
+block title
+  title= title
+
+block content
+    .admin-page
+      header.admin-page__header
+        .header-admin
+          a(href="/").header-admin__go-back Вернуться на сайт
+          h2.header-admin__title Панель администрирования
+        .tabs
+          ul.tabs__list
+            li.tabs__item.tabs__item--active(data-tab='about')
+              button.tabs__button Страница «Обо мне»
+            li.tabs__item(data-tab='blog')
+              button.tabs__button Страница «Блог»
+            li.tabs__item(data-tab='works')
+              button.tabs__button Страница «Мои работы»
+            li.tabs__item(data-tab='skills')
+              button.tabs__button Страница «skills»
+
+      main.admin-page__content
+        .tabs-content
+          ul.tabs-content__list
+            li(data-tab='about').tabs-content__item.tabs-content__item--active
+              .admin-about
+                .admin-title.admin-about__title Страница «Обо мне»
+                form.admin-about__form#skills-edit
+                  ul.admin-about__list 
+                    each skillgroup in skillgroups
+                      li.admin-about__group
+                          h2.admin-about__group-title= skillgroup.title
+                          ul.admin-about__group-skills
+                            each skill in skills
+                              if skill.groupId === skillgroup.id
+                                li.admin-about__skill
+                                    span.admin-about__skill-name= skill.name
+                                    label.admin-about__skill-field
+                                      input(maxlength='3' value=`${skill.value}` name='value' data-id=`${skill.id}`).admin-about__skill-input
+                                      span %
+                  button.admin-button Сохранить
+
+            li(data-tab='blog').tabs-content__item
+              .admin-blog
+                form(action='/admin/blog')#post-add.admin-blog__form
+                  .admin-title.admin-blog__title Страница «Блог»
+                  .admin-blog__subtitle Добавить запись
+                  input(type="text" name='title' placeholder='Название').admin-input
+                  input(type="date" name='date' placeholder='Дата').admin-input
+                  textarea(type="textarea" name='text' placeholder='Содержание').admin-input.admin-blog__textarea
+                  button.admin-button Добавить
+
+            li(data-tab='works').tabs-content__item
+              .admin-works
+                form(action='/admin/works' enctype="multipart/form-data")#work-add.admin-works__form
+                  .admin-title.admin-works__title Страница «Мои работы»
+                  .admin-works__subtitle Добавить работу
+                  input(type="text" name='title' placeholder='Название проекта').admin-input
+                  input(type="text" name='technologies' placeholder='Технологии').admin-input
+                  input(type="text" name='link' placeholder='Ссылка на проект').admin-input
+                  label.admin-works__label
+                    input(type="file" name='picture').admin-works__file-input
+                    span Загрузить картинку
+                  button.admin-button Добавить
+            
+            li(data-tab='skills').tabs-content__item
+              .admin-works
+                form(action='/admin/works')#skillgroup-add.admin-works__form
+                  .admin-title.admin-works__title Страница «skills»
+                  .admin-works__subtitle Добавить группу скилов
+                  input(type="text" name='title' placeholder='Название группы').admin-input
+                  button.admin-button Добавить
+                form(action='/admin/works')#skill-add.admin-works__form
+                  .admin-title.admin-works__title Страница «skills»
+                  .admin-works__subtitle Добавить скил
+                  select.admin-input(name='groupId')
+                    each skillgroup, index in skillgroups
+                      option(value=`${skillgroup.id}`)= skillgroup.title
+                  input(type="text" name='name' placeholder='Название скилла').admin-input
+                  input(type="text" name='value' placeholder='Значение скилла').admin-input
+                  button.admin-button Добавить

@@ -1,0 +1,96 @@
+extends ../layouts/main-layout.pug
+
+block title
+  title= title
+
+block header
+  button(href="#" data-link='.slider').go.go__down.fa.fa-chevron-down.hero__down-arrow
+  .hero__block
+    svg.icon.hero__portfolio-bg(width="1175.495" height="313.961")
+      use(xlink:href="#portfolio-header")
+    .user.hero__user
+      .user__photo.hero__photo
+        .user__photo-avatar
+          picture
+            img(src="/images/content/avatar.jpg" srcset='/images/content/avatar@2x.jpg 2x', alt="").user__photo-img
+      .user__name.hero__user-name Руслан Багаутдинов
+      .user__description.hero__user-desc Личный сайт веб разработчика
+  .hero__triangle-wrap
+    .triangle
+      svg.triangle__element.triangle__element--left.triangle__element--fill-works(viewbox='0 0 1000 100', preserveaspectratio='none')
+        polygon(points='0,0 0,100 1000,100')
+      svg.triangle__element.triangle__element--right.triangle__element--fill-works(viewbox='0 0 1000 100', preserveaspectratio='none')
+        polygon(points='0,100 1000,100 1000,0')
+
+block content
+  section.section.works
+    .works__title-wrapper
+      +title('Мои работы', 'works-header.png', 'works__title')
+    .slider
+      .slider__display
+        .slider__window.wow(data-animate='toFadeIn')
+          ul.slider__list
+            each work, index in works
+              li(class=`slider__display-inner ${index === 2 ? 'active': ''}`)
+                picture
+                  img(src=`${work.imgUrl}` alt="").slider__img
+
+      .slider__desk
+        each work, index in works
+          div(class=`slider__desk-wrapper ${index === 2 ? 'active': ''}`)
+            .subtitle.slider__desk-title= work.title
+            .slider__desk-technologies= work.technologies
+            a(href=`${work.link}` target='_blank').slider__button Посмотреть сайт
+      
+
+      .slider__controls
+        a.slider__controls-item.slider__controls-item--prev(href='#' data-animate='toFadeIn').wow
+          ul.slider__controls-list
+            each work, index in works
+              li(class=`slider__controls-photo ${index === 1 ? 'active': ''}`)
+                picture
+                  img(src=`${work.imgUrl}` alt="").slider__controls-img
+                  
+        a.slider__controls-item.slider__controls-item--next(href='#' data-animate='toFadeIn').wow
+          ul.slider__controls-list
+            each work, index in works
+              li(class=`slider__controls-photo ${index === 3 ? 'active': ''}`)
+                picture
+                  img(src=`${work.imgUrl}` alt="").slider__controls-img
+  
+  section.reviews.clearfix
+    +title('Что обо мне говорят', 'about-header.png', 'reviews__title wow', 'toFadeInUp')
+    .reviews__wrapper
+      ul.reviews__list.wow(data-animate='toFadeInUp')
+        li.reviews__item
+          .reviews__text Этот парень сделает реально хорошие приложения! Заказывайте приложения только у него!!!
+          .reviews__user-block
+            .reviews__photo
+              picture
+                img(src="/images/content/reviews/1.jpg" srcset='/images/content/reviews/1@2x.jpg 2x', alt="").reviews__img
+            .reviews__user-data 
+              .reviews__name Ковальчук Дмитрий
+              .reviews__position клиент
+        li.reviews__item
+          .reviews__text Этот код выдержит любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!
+          .reviews__user-block
+            .reviews__photo
+              picture
+                img(src="/images/content/reviews/2.jpg" srcset='/images/content/reviews/2@2x.jpg 2x', alt="").reviews__img
+            .reviews__user-data
+              .reviews__name Зар Захаров
+              .reviews__position клиент
+      .reviews__feedback
+        form.feedback#feedback-form
+          .feedback__bg
+          .feedback__wrapper
+            .subtitle.feedback__title Связаться со мной
+            .feedback__form#feedback
+              input.feedback__input(type="text" name='name' placeholder='Имя')
+              input.feedback__input(type="text" name='email' placeholder='Email')
+              textarea.feedback__input.feedback__textarea(name='text' placeholder='Ваше сообщение')
+          .feedback__buttons
+            button(type='submit' id='feedback-submit').feedback__button.feedback__button--left Отправить
+            a(id='feedback-clean').feedback__button.feedback__button--right Очистить
+
+     

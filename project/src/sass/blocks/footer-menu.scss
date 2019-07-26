@@ -1,0 +1,38 @@
+.footer-menu {
+
+}
+
+.footer-menu__list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  @include desktop  {
+    justify-content: flex-start;
+  }
+}
+
+.footer-menu__item {
+  margin-left: 10px;
+  &:first-child {
+    margin-left: 0;
+  }
+
+  @include tablet {
+    margin-left: 40px;
+  }
+}
+
+.footer-menu__link {
+  display: block;
+  @include roboto('medium');
+  font-size: 13px;
+  line-height: 23.69px;
+  color: #ffffff;
+  text-decoration: none;
+
+  @include tablet {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}

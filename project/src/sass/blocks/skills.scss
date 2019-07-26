@@ -1,0 +1,103 @@
+.skills {
+  margin: 0;
+  padding: 0;
+}
+
+.skills__item {
+}
+
+.skill-section {
+}
+
+.skill-section__title {
+  margin: 0;
+  margin-bottom: 17px;
+  padding: 0;
+  font-size: 21px;
+  line-height: 28px;
+  @include roboto(medium);
+  color: #4d5963;
+  text-align: center;
+
+  @include desktop {
+    margin-left: 20px;
+    margin-bottom: 16px;
+    font-size: 28px;
+    line-height: 32px;
+    color: #455a64;
+    text-align: left;
+  }
+}
+
+.skill-section__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  font-size: 0;
+
+  @include desktop {
+    justify-content: flex-start;
+    margin-bottom: 10px;
+  }
+}
+
+.skills-section__item {
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 30px;
+
+  @include tablet {
+    margin-bottom: 40px;
+  }
+
+  @include desktop {
+    margin-bottom: 30px;
+   
+  }
+}
+
+.skill {
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+.skill__circle {
+  width: 110px;
+  margin: 0;
+  padding: 0;
+
+  @include desktopFull {
+    width: 120px;
+  }
+}
+
+.skill__circle {
+  display: block;
+  fill: none;
+  stroke-width: 20;
+}
+.circle__first {
+  stroke: #dfdcd5;
+}
+.circle__second {
+  stroke: #1bb696;
+  stroke-dasharray: 0 282.6;
+  transition: all 2s;
+  // stroke-dasharray: 282.6 282.6;
+}
+
+.skill__name {
+  position: absolute;
+  @include centered();
+  font-size: 12.83px;
+  line-height: 14.71px;
+  @include roboto(medium);
+  color: $white-green;
+
+  @include desktopFull {
+    font-size: 14px;
+  }
+}

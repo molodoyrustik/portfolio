@@ -1,0 +1,48 @@
+.user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.user__photo {
+  width: 142px;
+  height: 142px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.user__photo-img {
+  max-width: 100%;
+}
+
+.user__name {
+  margin-bottom: 1px;
+  @include roboto('medium');
+  font-size: 21px;
+  line-height: 28px;
+  color: #455a64;
+  text-align: center;
+  @include tablet {
+    margin-bottom: 4px;
+    font-size: 28px;
+    line-height: 32px;
+  }
+  @include desktop {
+    margin-bottom: 3px;
+    line-height: 34px;
+  }
+}
+
+.user__description {
+  margin-bottom: 32px;
+  @include roboto('regular');
+  font-size: 14px;
+  line-height: 24px;
+  color: #455a64;
+  @include tablet {
+    margin-bottom: 30px;
+    font-size: 16px;
+    line-height: 24px;
+  }
+}

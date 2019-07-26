@@ -1,0 +1,17 @@
+.blog-user {
+
+}
+
+.blog-user__title {
+  padding-top: 0;
+  padding-bottom: 0;
+  color: #ffffff;
+
+  &::after, &::before {
+    background-color: #fff;
+  }
+}
+
+.blog-user__description {
+  color: #ffffff;
+}

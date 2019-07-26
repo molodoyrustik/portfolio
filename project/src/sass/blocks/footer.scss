@@ -1,0 +1,147 @@
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(#373e42, 0.85);
+  z-index: 14;
+}
+
+.footer__up-arrow {
+  position: absolute;
+  @include centered('x');
+  top: -60px;
+
+  @include tablet {
+    top: -76px;
+  }
+
+  @include desktop {
+    top: -86px;
+  }
+}
+
+.footer__wrapper {
+
+}
+
+.footer_row {
+  padding-top: 28px;
+  padding-left: 28px;
+  padding-right: 28px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(#ffffff, 0.1);
+
+  &:last-child {
+    padding-top: 14px; 
+    padding-left: 15px;
+    padding-right: 15px; 
+    padding-bottom: 12px;
+  }
+
+  @include desktop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 30px;
+    padding-top: 20px;
+    padding-right: 30px;
+    &:last-child {
+      padding-left: 30px;
+      padding-right: 30px;
+      padding-top: 15px;
+      padding-bottom: 15px;
+      border: none;
+    }
+  }
+}
+
+.footer__left {
+  margin-bottom: 12px;
+
+  @include tablet {
+    margin-bottom: 16px;
+  }
+
+  @include desktop {
+    width: 50%;
+    margin-bottom: 0;
+  }
+
+  @include desktopFull {
+    
+  }
+}
+
+
+.footer__right {
+  @include desktop {
+    width: 50%;
+  }
+}
+
+.footer__socials {
+   @include desktop  {
+    justify-content: flex-end;
+  }
+}
+
+.footer__socials-item {
+  margin-left: 10px;
+}
+
+.footer__socials-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(#ffffff, 0.5);
+  border-radius: 50%;
+  &:hover {
+    border: 1px solid #ffffff;
+    .footer__socials-icon {
+      display: none;
+    }
+
+    .footer__socials-icon--round {
+      display: block;
+    }
+  }
+}
+
+.footer__socials-icon {
+  fill: rgba(#ffffff, 0.5);
+}
+
+.footer__socials-icon--round {
+  display: none;
+  fill: #ffffff;
+}
+
+.footer__quote {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  line-height: 24px;
+  @include roboto(light);
+  color: rgba(#ffffff, 0.5);
+  text-align: center;
+
+  @include desktop {
+    text-align: left;
+  }
+}
+
+.footer__right-text {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  line-height: 24px;
+  @include roboto(light);
+  color: rgba(#ffffff, 0.5);
+  text-align: center;
+
+  @include desktop {
+    text-align: right;
+  }
+}

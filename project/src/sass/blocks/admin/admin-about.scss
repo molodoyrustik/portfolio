@@ -1,0 +1,122 @@
+.admin-about {
+}
+
+.admin-about__title {
+  margin-bottom: 13px;
+
+  @include tablet {
+    margin-bottom: 30px;;
+  }
+}
+
+.admin-about__form {
+  display: block; 
+}
+
+.admin-about__list {
+  @include desktop {
+    display: flex;
+    margin-bottom: 30px;
+  }
+}
+
+.admin-about__group {
+  margin-bottom: 20px;
+
+  &:last-child {
+    margin-bottom: 30px;
+  }
+
+  @include tablet {
+    margin-bottom: 30px;
+  }
+
+  @include desktop {
+    margin-bottom: 0;
+    margin-left: 90px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+}
+
+
+.admin-about__group-title {
+  margin: 0;
+  padding: 0;
+  @include roboto('medium');
+  font-size: 14px;
+  line-height: 34px;
+  color: #455a64;
+
+  @include tablet {
+    margin-bottom: 12px;
+    font-size: 16px;
+    line-height: 34px;
+  }
+}
+
+
+.admin-about__group-skills {
+  padding-left: 20px;
+}
+
+.admin-about__skill {
+  width: 180px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @include tablet {
+    
+  }
+}
+
+
+.admin-about__skill-name {
+  @include roboto('regular');
+  font-size: 14px;
+  line-height: 32px;
+  color: #455a64;
+}
+
+.admin-about__skill-field {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+
+  span {
+    margin-left: 10px;
+    @include roboto('regular');
+    font-size: 14px;
+    line-height: 32px;
+    color: #455a64;
+  }
+}
+
+.admin-about__skill-input{
+  display: block;
+  width: 50px;
+  padding-top: 7.5px;
+  padding-bottom: 7.5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: black;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+  box-sizing: border-box;
+  border: 1px solid transparent;
+
+  &:focus {
+    border: 1px solid #00bfa5
+  }
+}

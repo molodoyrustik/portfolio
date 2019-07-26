@@ -1,0 +1,8 @@
+.admin-title {
+  margin: 0;
+  padding: 0;
+  @include roboto('medium');
+  font-size: 21px;
+  line-height: 34px;
+  color: #455a64;
+}

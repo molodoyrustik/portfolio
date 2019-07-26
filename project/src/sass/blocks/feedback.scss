@@ -1,0 +1,159 @@
+.feedback {
+  position: relative;
+  width: 300px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  overflow: hidden;
+
+  @include tablet {
+    width: 350px;
+  }
+
+  @include desktop {
+    width: 380px;
+  }
+
+  @include desktopFull {
+
+  }
+}
+
+.feedback__bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+  filter: blur(5px);
+  background-image: url('/images/bg/reviews-bg.png');
+  background-repeat: no-repeat;
+  background-size: 2000px;
+  background-position: center -579px;
+}
+
+.feedback__wrapper {
+  position: relative;
+  padding-top: 37px;
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+.feedback__title {
+  margin: 0 auto;
+  margin-bottom: 23px;
+  text-align: center;
+  box-sizing: border-box;
+
+  @include tablet {
+    margin-bottom: 15px;
+  }
+
+  @include desktop {
+    margin-bottom: 37px;
+  }
+}
+
+.feedback__form {
+  display: flex;
+  flex-direction: column;
+}
+
+.feedback__input {
+  display: block;
+  margin-bottom: 20px;
+  padding-top: 10.5px;
+  padding-bottom: 10.5px;
+  padding-left: 20px;
+  padding-right: 30px;
+  @include roboto('medium');
+  font-size: 14px;
+  line-height: 24px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  border: none;
+  overflow: hidden;
+  outline: none;
+  border: 1px solid transparent;
+  box-sizing: border-box;
+
+  &:focus {
+    border: 1px solid #00bfa5;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @include desktop {
+    font-size: 16px;
+  }
+}
+
+.feedback__textarea {
+  height: 140px;
+  padding: 0;
+  padding-left: 20px;
+  padding-top: 13px;
+  padding-right: 20px;
+  resize: none; 
+}
+
+.feedback__buttons {
+  position: relative;
+  display: flex;
+}
+
+.feedback__button {
+  position: relative;
+  padding-top: 10.5px;
+  padding-bottom: 10.5px;
+  @include roboto('medium');
+  display: block;
+  width: 50%;
+  font-size: 14px;
+  line-height: 24px;
+  color: #ffffff;
+  text-align: center;
+  text-decoration: none;
+  background-color: rgba(10, 171, 152, 0.85);
+  outline: none;
+  border: none;
+
+  &:hover {
+    background-color: rgba(15, 139, 130, 0.85);
+  }
+
+  &::after {
+    display: block;
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background-color: rgba(#e0e3e7, 0.5);
+  }
+
+  // &:last-child {
+  //   border-left: 2px solid rgba(222, 227, 231, 0.5);
+  // }
+
+  @include tablet {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+.feedback__button--left {
+  &::after {
+    right: 0;
+  }
+}
+
+.feedback__button--right {
+  &::after {
+    left: 0;
+  }
+}

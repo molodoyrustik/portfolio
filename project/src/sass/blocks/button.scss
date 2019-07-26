@@ -1,0 +1,27 @@
+.button {
+  display: inline-block;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-left: 19px;
+  padding-right: 19px;
+  font-size: 14px;
+  line-height: 24px;
+  @include roboto(medium);
+  color: #ffffff;
+  text-decoration: none;
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+  &:hover {
+    background-color: #ffffff;
+    color: $white-green;
+  }
+
+  @include tablet {
+    padding-top: 9.5px;
+    padding-bottom: 9.5px;
+    padding-left: 28px;
+    padding-right: 28px;
+    font-size: 16px;
+    line-height: 24px;
+  }
+}

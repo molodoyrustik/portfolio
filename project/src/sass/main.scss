@@ -1,0 +1,74 @@
+// variables
+$white: #efeee9;
+$beige: #eeebdf;
+$main-font-color: #373e42;
+$subtitle-color: #455a64;
+$white-green: #00bfa5;
+$green: #009688;
+
+// fonts
+@import "_misc/font-roboto";
+@import "_misc/font-awesome";
+@import "_misc/font-bernier";
+
+// layout
+@import "_misc/mixins";
+@import "_misc/adjustment";
+
+// blocks
+@import "blocks/letter-span";
+@import "blocks/go";
+@import "blocks/socials";
+@import "blocks/menu";
+@import "blocks/user";
+@import "blocks/button";
+@import "blocks/subtitle";
+@import "blocks/title";
+@import "blocks/checkbox-group";
+@import "blocks/radio-group";
+@import "blocks/login";
+@import "blocks/flip-card";
+@import "blocks/hero";
+@import "blocks/menu-button";
+@import "blocks/triangle";
+@import "blocks/section";
+@import "blocks/welcome";
+@import "blocks/about";
+@import "blocks/user-about";
+@import "blocks/about-data";
+@import "blocks/skills";
+@import "blocks/map";
+@import "blocks/contacts";
+@import "blocks/footer";
+@import "blocks/footer-menu";
+@import "blocks/about-page";
+@import "blocks/main-layout";
+@import "blocks/works";
+@import "blocks/slider";
+@import "blocks/reviews";
+@import "blocks/feedback";
+@import "blocks/overlay";
+@import "blocks/main-menu";
+@import "blocks/blog-user";
+@import "blocks/blog-page";
+@import "blocks/sidebar";
+@import "blocks/posts";
+@import "blocks/mouse-parallax";
+@import "blocks/scroll-parallax";
+@import "blocks/preloader";
+@import "blocks/wow";
+@import "blocks/popup";
+
+// admin
+@import "blocks/admin/admin-title";
+@import "blocks/admin/admin-button";
+@import "blocks/admin/admin-input";
+
+@import "blocks/admin/admin-page";
+@import "blocks/admin/header-admin";
+@import "blocks/admin/tabs";
+
+@import "blocks/admin/tabs-content";
+@import "blocks/admin/admin-about";
+@import "blocks/admin/admin-works";
+@import "blocks/admin/admin-blog";

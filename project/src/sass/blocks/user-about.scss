@@ -1,0 +1,60 @@
+.user-about {
+
+}
+
+.user-about__photo {
+  max-width: 320px;
+  margin: 0 auto;
+  margin-bottom: 27px;
+
+  @include tablet {
+    max-width: 472px;
+    margin-bottom: 47px;
+  }
+
+  @include desktop {
+    max-width: 450px;
+    margin-bottom: 37px;
+  }
+}
+
+.user-about__img {
+  max-width: 100%;
+}
+
+.user-about__title {
+  margin-bottom: 10px;
+  @include tablet {
+    margin-bottom: 13px;
+  }
+  @include desktop {
+    margin-bottom: 33px;
+  }
+}
+
+.user-about__text {
+  padding-left: 10px;
+  padding-right: 10px;
+  @include roboto('regular');
+  font-size: 14px;
+  line-height: 24px;
+  color: #455a64;
+  text-align: left;
+
+  P {
+    margin-bottom: 10px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  @include tablet {
+    width: 472px;
+    margin: 0 auto;
+  }
+
+  @include desktop {
+    width: 450px;
+    padding: 0;
+  }
+}

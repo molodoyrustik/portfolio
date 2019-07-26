@@ -1,0 +1,66 @@
+.about-data {
+
+}
+
+.about-data__description {
+  margin-bottom: 19px;
+  text-align: center;
+
+  @include desktop {
+    margin-bottom: 50px;
+  }
+}
+
+
+.about-data__subtitle {
+  width: 132px;
+  margin: 0 auto;
+  margin-bottom: 14px;
+  text-align: center;
+  @include tablet {
+    width: 188px;
+  }
+  @include desktop {
+    width: 220px;
+    margin-bottom: 40px;
+  }
+}
+
+.about-data__text {
+  padding-left: 10px;
+  padding-right: 10px;
+  font-family: 'Roboto Regular';
+  font-size: 14px;
+  line-height: 24px;
+  color: #4d5963;
+  text-align: left;
+
+  @include tablet {
+    width: 472px;
+    margin: 0 auto;
+  }
+  @include desktop {
+    width: auto;
+    padding: 0;
+    padding-left: 40px;
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+.about-data__content {
+  @include tablet {
+    width: 768px;
+    margin: 0 auto;
+  }
+  @include desktop {
+    width: 620px;
+    padding-left: 20px;
+    margin: 0;
+  }
+
+  @include desktopFull {
+    width: 810px;
+    
+  }
+}

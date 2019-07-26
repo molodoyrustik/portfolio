@@ -1,0 +1,52 @@
+.menu-button {
+  display: block;
+  position: relative;
+  width: 35px;
+  height: 35px;
+  padding: 0;
+  z-index: 10;
+  border: none;
+  outline: none;
+  background: none;
+  cursor: pointer;
+
+  &::after {
+    bottom: 0;
+  }
+  
+  &::before {
+    top: 0;
+  }
+}
+
+.menu-button__line, .menu-button::before, .menu-button::after {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 5px;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 5px;
+  transform-origin: center center;
+  transition: all 0.3s;
+}
+
+.menu-button__line {
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 1;
+}
+
+.menu-button__active::before {
+  top: 50%;
+  transform: translateY(-50%) rotate(-45deg);
+}
+
+.menu-button__active::after {
+  bottom: 50%;
+  transform: translateY(50%) rotate(45deg);
+}
+
+.menu-button__active .menu-button__line {
+  opacity: 0;
+}

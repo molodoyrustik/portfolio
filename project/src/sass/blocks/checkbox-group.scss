@@ -1,0 +1,43 @@
+
+.checkbox-group {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox-group__input {
+  display: none;
+}
+
+.checkbox-group__indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  color: #00bfa5;
+  background-color: #00bfa5;
+  border-radius: 2px;
+}
+
+.checkbox-group__icon {
+  fill: #ffffff;
+  opacity: 0;
+  transition: all 0.5s;
+}
+
+.checkbox-group__text {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  line-height: 24px;
+  @include roboto(regular);
+  color: #455a64;
+  cursor: pointer;
+}
+
+.checkbox-group input:checked + .checkbox-group__indicator {
+  .checkbox-group__icon {
+    opacity: 1;
+  }
+}

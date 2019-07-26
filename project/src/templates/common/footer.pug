@@ -1,0 +1,28 @@
+footer.footer
+	button(href="#" data-link='.slider').go.go__up.fa.fa-chevron-up.footer__up-arrow
+	.footer__wrapper
+		.footer_row
+			.footer__left
+				.footer-menu
+					ul.footer-menu__list
+						each item in ['Мои работы', 'Обо мне', 'Блог', 'Авторизация']
+							li.footer-menu__item
+								a(href="#").footer-menu__link= item
+			.footer__right
+				ul.socials__list.footer__socials
+					- var vk = {name: 'vkontakte', width: '31', height: '17', href:'https://vk.com/molodoyrustik'};
+					- var github = {name: 'github', width: '26', height: '22', href:'https://github.com/molodoyrustik'};
+					- var inst = {name: 'instagram', width: '24', height: '22', href:'https://www.instagram.com/molodoy.rustik/'};
+					each item in [vk, github, inst]
+						li.socials__item.footer__socials-item
+							a(href=`${item.href}` target='_blank' class=` socials__link socials__link--${item.name} footer__socials-link`)
+								span.socials__text= item.name
+								svg.icon.footer__socials-icon(width=`${item.width}` height=`${item.height}`)
+									use(xlink:href=`#${item.name}`)
+								svg.icon(class=`footer__socials-icon footer__socials-icon--round` width="36" height="36")
+									use(xlink:href=`#${item.name}_round`)
+		.footer_row
+			.footer__left
+				p.footer__quote «Если беспорядок на столе означает беспорядок в голове, то что же тогда означает пустой стол?»
+			.footer__right
+				p.footer__right-text © Руслан Багаутдинов | I boldly go where my dream is | 2016

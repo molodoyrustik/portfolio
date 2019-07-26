@@ -1,0 +1,40 @@
+.go {
+  display: block;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  transition: all 0.3s;
+  cursor: pointer;
+  color: rgba(#ffffff, 0.7);
+  font-size: 36px;
+  line-height: 36px;
+
+  &:hover {
+    color: #ffffff;
+  }
+}
+
+.go__down {
+  &:hover {
+    padding-top: 20px;
+    bottom: 30px;
+  }
+  &:before {
+    display: block;
+    content: "\f078";
+    font-family: 'FontAwesome';
+    font-size: 36px;
+    line-height: 36px;
+  }
+}
+
+.go__up {
+  &:before {
+    display: block;
+    content: "\f077";
+    font-family: 'FontAwesome';
+    font-size: 36px;
+    line-height: 36px;
+  }
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}

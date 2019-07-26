@@ -1,0 +1,38 @@
+ .subtitle {
+  position: relative;
+  display: inline-block;
+  margin: 0;
+  padding-left: 42px;
+  padding-right: 42px; 
+  @include bernier();
+  font-size: 21px;
+  line-height: 28px;
+  color: $subtitle-color;
+
+  &:after, &:before {
+    position: absolute;
+    content: '';
+    display: block;
+    width: 22px;
+    height: 5px;
+    @include centered('y');
+    background: rgba($main-font-color, .2);
+  }
+
+  &:after {
+    right: 0px;
+  }
+
+  &:before {
+    left: 0px;
+  }
+
+  @include tablet {
+    font-size: 30px;
+    line-height: 36px;
+  }
+
+  @include desktop {
+    font-size: 35px;
+  }
+}

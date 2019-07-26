@@ -1,0 +1,84 @@
+@mixin awesome() {
+  font-family: 'FontAwesome';
+}
+
+@mixin bernier($typeBernier: regular) {
+  @if $typeBernier == regular {
+    font-family: 'BERNIER';
+  } @else if $typeBernier == distressed {
+    font-family: 'BERNIER Distressed';
+  } @else if $typeBernier == shade {
+    font-family: 'BERNIER Shade';
+  }
+}
+
+@mixin roboto($typeRoboto: regular) {
+  @if $typeRoboto == regular {
+    font-family: 'Roboto Regular';
+  } @else if $typeRoboto == medium-italic {
+    font-family: 'Roboto Medium Italic';
+  } @else if $typeRoboto == medium {
+    font-family: 'Roboto Medium';
+  } @else if $typeRoboto == light-italic {
+    font-family: 'Roboto Light Italic';
+  } @else if $typeRoboto == light {
+    font-family: 'Roboto Light';
+  } @else if $typeRoboto == italic {
+    font-family: 'Roboto Italic';
+  } @else if $typeRoboto == bold-italic {
+    font-family: 'Roboto Bold Italic';
+  } @else if $typeRoboto == bold {
+    font-family: 'Roboto Bold';
+  }
+}
+
+@mixin tablet {
+  @media screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin desktopFull {
+  @media screen and (min-width: 1800px) {
+    @content;
+  }
+}
+
+
+@mixin retina {
+  @media (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+    @content;
+  }
+}
+
+@mixin retina3 {
+  @media (min-resolution: 3dppx) {
+    @content;
+  }
+}
+
+@mixin centered($axis: 'both') {
+  position: absolute;
+
+  @if $axis == 'both' {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  @if $axis == 'x' {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  @if $axis == 'y' {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}

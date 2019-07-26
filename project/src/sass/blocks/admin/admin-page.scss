@@ -1,0 +1,39 @@
+.admin-page {
+  height: 100%;
+}
+
+.admin-page__header {
+
+}
+
+.admin-page__content {
+  position: relative;
+  min-height: 100%;
+  padding-top: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+
+  background-image: url('/images/bg/welcome-bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  &::after {
+    display: block;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(#ffffff, 0.85);
+  }
+
+  @include tablet { 
+    padding-top: 43.5px;
+    padding-left: 30px; 
+    padding-right: 30px;
+    padding-bottom: 30px;
+  }
+}

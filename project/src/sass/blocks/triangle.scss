@@ -1,0 +1,44 @@
+.triangle {
+  display: flex;
+  width: 100%;
+  height: 30px;
+
+  @include tablet {
+    height: 66px;
+  }
+
+  @include desktop {
+    height: 106px;
+  }
+
+  &__element {
+    width: 50%;
+  }
+
+  &__element--left {
+    left: 0;
+  }
+
+  &__element--right {
+    right: 0;
+  }
+
+  &__element--fill-white {
+    fill: #efeee9;
+  }
+  &__element--fill-beige {
+    fill: #efeee9;
+
+    @include desktop {
+      fill: #eeebdf;
+    }
+  }
+
+  &__element--fill-works {
+    fill: #faf8f0;
+  }
+
+  &__element--fill-blog {
+    fill: #ffffff;
+  }
+}
