@@ -96,6 +96,7 @@
   line-height: 14.71px;
   @include roboto(medium);
   color: $white-green;
+  text-align: center;
 
   @include desktopFull {
     font-size: 14px;
