@@ -41,7 +41,7 @@ var animateCss = (function() {
 			const value = $(this).data('value');
 			$(this).css({
 				opacity: 1,
-				'stroke-dasharray': `${value * 282 / 100} 282.6`
+				'stroke-dasharray': `${value * 282.6 / 100} 282.6`
 			})
 			// $(this).addClass('toCircle');
 		},
